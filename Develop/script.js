@@ -47,12 +47,19 @@ function saveMemo() {
     });
   }
 
+//   fucntion that calls data from local storage into textareas of Memo
+function recallMemo() {
+  let savedMemo = JSON.parse(localStorage.getItem("savedMemo"));
+  for (let i = 0; i < textarea.length; i++) {
+    textarea[i].textContent = savedMemo[i];
+  }
+}
         // <!--runtime-->
 
 // run on page load
 function init() {
   checkTime();
-  displayMemo();
+  recallMemo();
   saveMemo();
 }
 $(document).ready(init());
