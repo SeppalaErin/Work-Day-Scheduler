@@ -16,6 +16,9 @@ $("#currentDay").text(now.toLocaleString(DateTime.DATETIME_MED));
 let saveBtn = $(".saveBtn");
 let textarea = $(".description");
 
+// Array for Memos in local storage
+let storedMemo = [];
+
 
         // <!--functions-->
 
@@ -32,11 +35,24 @@ function checkTime() {
   }
 }        
 
+// function that saves each Memo to local storage
+function saveMemo() {
+    saveBtn.on("click", () => {
+      for (let i = 0; i < textarea.length; i++) {
+        let memo = textarea[i].value;
+        storedMemo.push(memo);
+        localStorage.setItem("savedMemo", JSON.stringify(storedMemo));
+      }
+      storedMemo = [];
+    });
+  }
 
         // <!--runtime-->
 
 // run on page load
 function init() {
   checkTime();
+  displayMemo();
+  saveMemo();
 }
 $(document).ready(init());
