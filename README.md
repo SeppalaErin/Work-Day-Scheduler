@@ -2,7 +2,7 @@
 
 This application allows user to add tasks to a dynamically changing Work Day Scheduler based on current time, that can be saved to local storage.
 
-The Deployed Application can be accessed at: [Weather-Dashboard](https://aseppala98.github.io/Work-Day-Scheduler/Develop/index.html)
+The Deployed Application can be accessed at: [Work Day Scheduler](https://seppalaerin.github.io/Work-Day-Scheduler/index.html)
 
 # Technologies Used:
 -HTML
